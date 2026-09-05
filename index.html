@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fbfaf7">
+<title>حفل زفاف أيوب طراد بن منصور</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbfaf7; --paper2:#f4efe4; --gold:#b28a3d; --gold2:#d9bc79;
+  --ink:#2c2823; --muted:#756d63; --red:#a71825; --red2:#d13b45;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Cairo",sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.page{max-width:980px;margin:auto;position:relative}
+.ornament{color:var(--gold);letter-spacing:8px;font-size:18px}
+.gold-line{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);width:min(420px,80%);margin:18px auto}
+#petals{position:fixed;inset:0;pointer-events:none;z-index:40;overflow:hidden}
+.petal{position:absolute;top:-40px;color:var(--red);font-size:20px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.08));animation:fall linear forwards}
+@keyframes fall{
+  0%{transform:translate3d(0,-50px,0) rotate(0deg);opacity:0}
+  10%{opacity:.9}
+  50%{transform:translate3d(var(--drift),55vh,0) rotate(190deg)}
+  100%{transform:translate3d(calc(var(--drift)*-0.7),110vh,0) rotate(420deg);opacity:0}
+}
+#opening{
+  position:fixed;inset:0;z-index:100;background:
+  radial-gradient(circle at 50% 30%,rgba(255,255,255,.98),rgba(245,239,227,.98)),
+  var(--paper);
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;
+  transition:opacity .9s,visibility .9s;
+}
+#opening.hide{opacity:0;visibility:hidden;pointer-events:none}
+.open-card{
+  width:min(620px,100%);padding:46px 24px 40px;border:1px solid var(--gold2);
+  background:rgba(255,255,255,.62);box-shadow:0 18px 60px rgba(91,70,35,.10);
+  position:relative
+}
+.open-card:before,.open-card:after{
+  content:"";position:absolute;width:60px;height:60px;border-color:var(--gold);
+}
+.open-card:before{top:10px;right:10px;border-top:1px solid;border-right:1px solid}
+.open-card:after{bottom:10px;left:10px;border-bottom:1px solid;border-left:1px solid}
+.bismillah{font-family:"Scheherazade New",serif;font-size:26px;color:var(--gold);margin-bottom:10px}
+.open-title{font-family:"Amiri",serif;font-size:46px;line-height:1.25;margin:0}
+.open-sub{color:var(--muted);font-size:15px;margin:10px 0 24px}
+.open-btn,.map-btn{
+  border:1px solid var(--gold);background:linear-gradient(180deg,#d9bc79,#b28a3d);color:white;
+  padding:13px 28px;border-radius:999px;font-family:"Cairo";font-weight:700;cursor:pointer;
+  box-shadow:0 8px 20px rgba(178,138,61,.22)
+}
+#musicBtn{
+  position:fixed;z-index:50;left:18px;bottom:18px;width:48px;height:48px;border-radius:50%;
+  border:1px solid var(--gold);background:rgba(255,255,255,.9);color:var(--gold);cursor:pointer;
+  box-shadow:0 6px 20px rgba(0,0,0,.1);font-size:18px
+}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:38px 18px;position:relative}
+.hero-inner{width:min(760px,100%);padding:44px 22px;position:relative}
+.hero-inner:before,.hero-inner:after{content:"";position:absolute;inset:0;border:1px solid rgba(178,138,61,.28);pointer-events:none}
+.hero-inner:after{inset:9px;border-color:rgba(178,138,61,.14)}
+.small{font-family:"Scheherazade New",serif;font-size:22px;color:var(--gold)}
+.hero h1{font-family:"Amiri",serif;font-size:clamp(44px,9vw,78px);margin:7px 0 2px;line-height:1.1}
+.hero h2{font-family:"Scheherazade New",serif;font-weight:400;color:var(--red);font-size:clamp(24px,5vw,38px);margin:0}
+.date{font-family:"Amiri",serif;font-size:25px;margin-top:18px}
+.place{font-size:15px;color:var(--muted);line-height:1.9}
+.scroll{display:inline-block;margin-top:25px;color:var(--gold);font-size:13px}
+section{padding:74px 18px}
+.section-title{text-align:center;font-family:"Amiri",serif;font-size:37px;margin:0 0 10px}
+.section-note{text-align:center;color:var(--muted);font-size:14px}
+.verse{background:linear-gradient(180deg,#fffdf8,#f4ecda);border-top:1px solid var(--gold2);border-bottom:1px solid var(--gold2);text-align:center}
+.verse-text{font-family:"Scheherazade New",serif;font-size:clamp(28px,5vw,42px);line-height:1.75;margin:18px auto 6px;max-width:760px}
+.verse-ref{color:var(--gold);font-size:14px}
+.details-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.card{background:#fff;border:1px solid rgba(178,138,61,.25);padding:25px 15px;text-align:center;box-shadow:0 10px 30px rgba(56,42,20,.06)}
+.icon{font-size:28px;color:var(--gold);margin-bottom:7px}
+.card h3{font-family:"Amiri",serif;font-size:25px;margin:0 0 4px}
+.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.9}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:650px;margin:30px auto 0}
+.count{border:1px solid rgba(178,138,61,.3);padding:15px 8px;background:white}
+.count strong{display:block;font-family:"Amiri";font-size:34px;color:var(--gold)}
+.count span{font-size:12px;color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:30px}
+.gallery img{width:100%;aspect-ratio:4/5;object-fit:cover;border:5px solid white;outline:1px solid rgba(178,138,61,.28);box-shadow:0 10px 25px rgba(0,0,0,.08)}
+.location{background:#f6f1e7}
+.location-box{max-width:720px;margin:30px auto 0;background:white;border:1px solid rgba(178,138,61,.25);padding:28px;text-align:center}
+.location-box h3{font-family:"Amiri";font-size:31px;margin:0 0 5px}
+.location-box p{color:var(--muted);margin:5px 0 18px;line-height:1.9}
+.map-btn{display:inline-block}
+.timeline{max-width:680px;margin:28px auto 0}
+.item{display:flex;gap:18px;align-items:flex-start;padding:17px 0;border-bottom:1px solid rgba(178,138,61,.18)}
+.time{min-width:88px;color:var(--gold);font-family:"Amiri";font-size:23px;font-weight:700}
+.item b{font-family:"Amiri";font-size:24px}
+.item p{margin:2px 0;color:var(--muted);font-size:13px}
+.footer{text-align:center;padding:58px 18px 80px;background:#2c2823;color:#eee}
+.footer .small{color:var(--gold2)}
+.footer h2{font-family:"Amiri";font-size:38px;margin:5px 0}
+@media(max-width:680px){
+  .details-grid{grid-template-columns:1fr}
+  .countdown{grid-template-columns:repeat(2,1fr);max-width:390px}
+  .gallery{grid-template-columns:1fr}
+  section{padding:58px 14px}
+  .hero-inner{padding:38px 15px}
+}
+</style>
+</head>
+<body>
+<div id="opening">
+  <div class="open-card">
+    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+    <div class="ornament">✦ ❈ ✦</div>
+    <h1 class="open-title">دعوة زفاف</h1>
+    <p class="open-sub">بكل المحبة والفرح، يسعدنا أن نشارككم هذه المناسبة السعيدة</p>
+    <button class="open-btn" id="openBtn">فتح الدعوة ♡</button>
+  </div>
+</div>
+
+<div id="petals"></div>
+<audio id="song" loop preload="auto"><source src="music/wedding-song.mp3" type="audio/mpeg"></audio>
+<button id="musicBtn" aria-label="تشغيل أو إيقاف الموسيقى">♫</button>
+
+<main class="page">
+<section class="hero">
+  <div class="hero-inner">
+    <div class="small">بِكُلِّ الفرح والسرور</div>
+    <div class="ornament">✦ ❈ ✦</div>
+    <h1>أيوب طراد بن منصور</h1>
+    <h2>حفل زفاف</h2>
+    <div class="gold-line"></div>
+    <div class="date">الجمعة 25 ديسمبر 2026</div>
+    <div class="place">ابتداءً من الساعة 14:30 — وراء صلاة الجمعة<br>قاعة حفلات حليم دراوي<br>بلدية بني والبان — ولاية سكيكدة</div>
+    <a class="scroll" href="#verse">اكتشف تفاصيل الدعوة ↓</a>
+  </div>
+</section>
+
+<section id="verse" class="verse">
+  <div class="ornament">❈ ✦ ❈</div>
+  <div class="verse-text">﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ﴾</div>
+  <div class="verse-ref">سورة الروم — الآية 21</div>
+</section>
+
+<section>
+  <h2 class="section-title">موعدنا</h2>
+  <p class="section-note">يسعدنا حضوركم ومشاركتنا فرحة هذا اليوم المبارك</p>
+  <div class="details-grid">
+    <div class="card"><div class="icon">◷</div><h3>التاريخ</h3><p>الجمعة<br>25 ديسمبر 2026</p></div>
+    <div class="card"><div class="icon">⌚</div><h3>الساعة</h3><p>ابتداءً من 14:30<br>وراء صلاة الجمعة</p></div>
+    <div class="card"><div class="icon">♧</div><h3>المكان</h3><p>قاعة حفلات حليم دراوي<br>بني والبان — سكيكدة</p></div>
+  </div>
+  <div class="countdown" id="countdown">
+    <div class="count"><strong id="days">--</strong><span>يوم</span></div>
+    <div class="count"><strong id="hours">--</strong><span>ساعة</span></div>
+    <div class="count"><strong id="mins">--</strong><span>دقيقة</span></div>
+    <div class="count"><strong id="secs">--</strong><span>ثانية</span></div>
+  </div>
+</section>
+
+<section class="location">
+  <h2 class="section-title">موقع الحفل</h2>
+  <p class="section-note">ننتظركم بكل حب في قاعة حفلات حليم دراوي</p>
+  <div class="location-box">
+    <h3>قاعة حفلات حليم دراوي</h3>
+    <p>بلدية بني والبان<br>ولاية سكيكدة — الجزائر</p>
+    <a class="map-btn" href="https://maps.app.goo.gl/bp1M1swNrvGvYkq68" target="_blank" rel="noopener">فتح الموقع على الخريطة</a>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">من فرحة أيوب</h2>
+  <p class="section-note">بعض اللحظات التي تسبق هذا اليوم الجميل</p>
+  <div class="gallery">
+    <img src="images/photo1.jpg" alt="صورة من أجواء المناسبة">
+    <img src="images/photo2.jpg" alt="صورة من أجواء المناسبة">
+    <img src="images/photo3.jpg" alt="صورة من أجواء المناسبة">
+    <img src="images/photo4.jpg" alt="صورة من أجواء المناسبة">
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">برنامج اليوم</h2>
+  <p class="section-note">مواعيد الاحتفال وختامه بالفرقة الموسيقية ثم حنّة العريس عند منتصف الليل</p>
+  <div class="timeline">
+    <div class="item"><div class="time">14:30</div><div><b>استقبال الضيوف</b><p>بعد صلاة الجمعة</p></div></div>
+    <div class="item"><div class="time">15:30</div><div><b>بداية أجواء الحفل</b><p>نحتفل معًا بهذه المناسبة السعيدة</p></div></div>
+    <div class="item"><div class="time">19:00</div><div><b>العشاء</b><p>على شرف الحضور الكريم</p></div></div>
+    <div class="item"><div class="time">22:30</div><div><b>ختام الحفل</b><p>مع الفرقة الموسيقية وأجواء احتفالية مميزة</p></div></div>
+    <div class="item"><div class="time">00:00</div><div><b>حِنّة العريس</b><p>نلتقي مجددًا عند منتصف الليل للاحتفال بحنّة العريس</p></div></div>
+  </div>
+</section>
+
+
+<section id="rsvp">
+  <h2 class="section-title">تأكيد الحضور</h2>
+  <p class="section-note">يشرفنا حضوركم ومشاركتنا فرحتنا، نرجو تأكيد حضوركم عبر واتساب</p>
+  <div class="location-box">
+    <div class="icon">♡</div>
+    <h3>هل ستشاركوننا فرحتنا؟</h3>
+    <p>اضغط على الزر لإرسال رسالة تأكيد الحضور مباشرة عبر واتساب.</p>
+    <a class="map-btn" href="https://wa.me/213667313577?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AA%D8%A3%D9%83%D9%8A%D8%AF%20%D8%AD%D8%B6%D9%88%D8%B1%D9%8A%20%D9%81%D9%8A%20%D8%AD%D9%81%D9%84%20%D8%B2%D9%81%D8%A7%D9%81%20%D8%A3%D9%8A%D9%88%D8%A8%20%D8%B7%D8%B1%D8%A7%D8%AF%20%D8%A8%D9%86%20%D9%85%D9%86%D8%B5%D9%88%D8%B1." target="_blank" rel="noopener">تأكيد الحضور عبر واتساب</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="small">بارك الله له وبارك عليه وجمع بينهما في خير</div>
+  <h2>أيوب طراد بن منصور</h2>
+  <div class="ornament">✦ ❈ ✦</div>
+  <p>حضوركم يزيد فرحتنا جمالًا</p>
+</footer>
+</main>
+
+<script>
+const opening=document.getElementById('opening');
+const song=document.getElementById('song');
+const musicBtn=document.getElementById('musicBtn');
+
+document.getElementById('openBtn').addEventListener('click',()=>{
+  opening.classList.add('hide');
+  song.play().catch(()=>{});
+  startPetals();
+});
+musicBtn.addEventListener('click',()=>{
+  if(song.paused){song.play().catch(()=>{}); musicBtn.textContent='♫';}
+  else{song.pause(); musicBtn.textContent='◼';}
+});
+
+function startPetals(){
+  setInterval(()=>{
+    const p=document.createElement('span');
+    p.className='petal';
+    p.textContent=Math.random()>.35?'🌹':'✿';
+    p.style.left=(Math.random()*100)+'vw';
+    p.style.fontSize=(12+Math.random()*15)+'px';
+    p.style.setProperty('--drift',(-80+Math.random()*160)+'px');
+    p.style.animationDuration=(6+Math.random()*7)+'s';
+    document.getElementById('petals').appendChild(p);
+    setTimeout(()=>p.remove(),14000);
+  },420);
+}
+let countdownStarted=false;
+function updateCountdown(){
+  const target=new Date('2026-12-25T14:30:00+01:00').getTime();
+  const now=Date.now(), diff=target-now;
+  if(diff<=0){
+    ['days','hours','mins','secs'].forEach(id=>document.getElementById(id).textContent='0');
+    return;
+  }
+  document.getElementById('days').textContent=Math.floor(diff/86400000);
+  document.getElementById('hours').textContent=Math.floor(diff/3600000)%24;
+  document.getElementById('mins').textContent=Math.floor(diff/60000)%60;
+  document.getElementById('secs').textContent=Math.floor(diff/1000)%60;
+}
+updateCountdown(); setInterval(updateCountdown,1000);
+</script>
+</body>
+</html>
